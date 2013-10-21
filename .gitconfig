@@ -1,0 +1,32 @@
+[user]
+	name = Brian Cobb
+	email = bcobb@uwalumni.com
+[github]
+	user = bcobb
+[core]
+	excludesfile = /Users/bcobb/.gitignore_global
+[apply]
+  whitespace = fix
+
+[color]
+  ui = auto
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = cyan
+  frag = magenta
+  old = red
+  new = blue
+  whitespace = red reverse
+[color "status"]
+  added = blue
+  changed = red
+  untracked = cyan
+[credential]
+	helper = osxkeychain
