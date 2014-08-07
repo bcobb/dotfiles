@@ -23,6 +23,7 @@ Plugin 'Lokaltog/vim-distinguished'
 Plugin 'jnwhiteh/vim-golang'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'mustache/vim-mode'
+Plugin 'junegunn/vim-easy-align'
 
 set linebreak
 set number
