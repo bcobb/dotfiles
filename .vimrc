@@ -6,6 +6,9 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 set undodir^=~/.vim/undo
+set undofile
+set undolevels=1000
+set undoreload=10000
 
 Plugin 'gmarik/vundle'
 
