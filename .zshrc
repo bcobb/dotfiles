@@ -14,8 +14,8 @@ NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 export EDITOR='vim'
 export LESS=-R
 
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
 
 alias rspec="nocorrect rspec"
 alias grunt="nocorrect grunt"
