@@ -5,6 +5,7 @@
 	user = bcobb
 [core]
 	excludesfile = /Users/bcobb/.gitignore_global
+	editor = /usr/local/bin/vim
 [apply]
   whitespace = fix
 
