@@ -7,22 +7,22 @@ call vundle#rc()
 
 set undodir^=~/.vim/undo
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-sensible'
-Bundle 'pangloss/vim-javascript'
-Bundle 'wlangstroth/vim-haskell'
-Bundle 'nono/vim-handlebars'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'guns/vim-clojure-static'
-Bundle 'tpope/vim-classpath'
-Bundle 'tpope/vim-fireplace'
-Bundle 't9md/vim-ruby-xmpfilter'
-Bundle 'Lokaltog/vim-distinguished'
-Bundle 'jnwhiteh/vim-golang'
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'mustache/vim-mode'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-sensible'
+Plugin 'pangloss/vim-javascript'
+Plugin 'wlangstroth/vim-haskell'
+Plugin 'nono/vim-handlebars'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-classpath'
+Plugin 'tpope/vim-fireplace'
+Plugin 't9md/vim-ruby-xmpfilter'
+Plugin 'Lokaltog/vim-distinguished'
+Plugin 'jnwhiteh/vim-golang'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'mustache/vim-mode'
 
 set linebreak
 set number
