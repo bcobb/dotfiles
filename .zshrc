@@ -2,7 +2,7 @@ ZSH=$HOME/lib/oh-my-zsh
 
 ZSH_THEME="gentoo"
 
-plugins=(git rvm)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
