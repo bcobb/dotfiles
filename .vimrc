@@ -25,6 +25,7 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'mustache/vim-mode'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'dockyard/vim-easydir'
+Plugin 'plasticboy/vim-markdown'
 
 set linebreak
 set number
