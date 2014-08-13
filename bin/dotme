@@ -20,3 +20,5 @@ fi
 if [ ! -e ~/lib/oh-my-zsh/oh-my-zsh.sh ]; then
   git clone git://github.com/robbyrussell/oh-my-zsh.git ~/lib/oh-my-zsh
 fi
+
+mkdir -p ~/.vim/undo
