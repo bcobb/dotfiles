@@ -26,15 +26,25 @@ in_git_repo() {
   git status &> /dev/null
 }
 
+in_new_git_repo() {
+  git status | grep 'Initial commit' &> /dev/null
+}
+
 prompt_command() {
   if in_git_repo; then
-    git_branch=$(git rev-parse --abbrev-ref HEAD)
+    if in_new_git_repo; then
+      branch_display="\[\e[$BRANCH_COLOR\]master\[$CEND\]"
+    else
+      git_branch=$(git rev-parse --abbrev-ref HEAD)
+      branch_display="\[\e[$BRANCH_COLOR\]$git_branch\[$CEND\]"
+    fi
+
     status_length=$(git status -s | wc -l)
 
-    ADDENDUM="\[\e[$BRANCH_COLOR\]$git_branch\[$CEND\]"
-
     if [ $status_length -ne 0 ]; then
-      ADDENDUM="$ADDENDUM*"
+      ADDENDUM="$branch_display*"
+    else
+      ADDENDUM="$branch_display"
     fi
 
     ADDENDUM=" ($ADDENDUM) "
