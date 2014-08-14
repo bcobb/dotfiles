@@ -12,6 +12,7 @@ ln -Fs ~/.dotfiles/.rvm_rc ~/.rvmrc
 ln -Fs ~/.dotfiles/.tmux.conf ~/.tmux.conf
 ln -Fs ~/.dotfiles/.vimrc ~/.vimrc
 ln -Fs ~/.dotfiles/.zshrc ~/.zshrc
+ln -Fs ~/.dotfiles/.slate ~/.slate
 
 if [ ! -e ~/.vim/bundle/vundle ]; then
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle && vim +BundleInstall +qall
