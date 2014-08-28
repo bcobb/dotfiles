@@ -41,5 +41,6 @@ Thumbs.db
 # Developer Tools #
 ###################
 .rbx
+.vagrant
 
 .lein-repl-history
