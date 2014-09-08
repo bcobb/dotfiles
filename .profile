@@ -1,4 +1,5 @@
 export BREW_PREFIX=/usr/local/opt
+export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
 
 alias ll='ls -lph'
 
