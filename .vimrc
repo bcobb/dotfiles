@@ -30,6 +30,7 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'dockyard/vim-easydir'
 Plugin 'plasticboy/vim-markdown'
 
+let g:vim_markdown_folding_disabled=1
 set linebreak
 set number
 set scrolloff=5
