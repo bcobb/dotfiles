@@ -3,7 +3,7 @@ export VAGRANT_DEFAULT_PROVIDER=vmware_fusion
 
 alias ll='ls -lph'
 
-PATH=bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:$PATH:$HOME/bin
+PATH=bin:node_modules/.bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:$PATH:$HOME/bin
 export PATH
 
 source $BREW_PREFIX/chruby/share/chruby/chruby.sh
