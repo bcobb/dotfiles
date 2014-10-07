@@ -6,9 +6,14 @@ alias ll='ls -lph'
 PATH=bin:node_modules/.bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:$PATH:$HOME/bin
 export PATH
 
-source $BREW_PREFIX/chruby/share/chruby/chruby.sh
-source $BREW_PREFIX/chruby/share/chruby/auto.sh
-source $BREW_PREFIX/git/etc/bash_completion.d/git-completion.bash
+if [ -d $BREW_PREFIX/chruby/share/chruby ] ; then
+  source $BREW_PREFIX/chruby/share/chruby/chruby.sh
+  source $BREW_PREFIX/chruby/share/chruby/auto.sh
+fi
+
+if [ -d $BREW_PREFIX/git ] ; then
+  source $BREW_PREFIX/git/etc/bash_completion.d/git-completion.bash
+fi
 
 [ -f .ruby-version ] || chruby 2.1
 
