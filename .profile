@@ -9,13 +9,13 @@ export PATH
 if [ -d $BREW_PREFIX/chruby/share/chruby ] ; then
   source $BREW_PREFIX/chruby/share/chruby/chruby.sh
   source $BREW_PREFIX/chruby/share/chruby/auto.sh
+
+  [ -f .ruby-version ] || chruby 2.1
 fi
 
 if [ -d $BREW_PREFIX/git ] ; then
   source $BREW_PREFIX/git/etc/bash_completion.d/git-completion.bash
 fi
-
-[ -f .ruby-version ] || chruby 2.1
 
 USER_COLOR='\e[38;05;85m'
 HOST_COLOR=$USER_COLOR
