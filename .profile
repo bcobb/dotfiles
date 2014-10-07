@@ -63,3 +63,6 @@ set_ps1() {
 set_ps1
 
 PROMPT_COMMAND='prompt_command'
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
