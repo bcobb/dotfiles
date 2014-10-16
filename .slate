@@ -6,8 +6,8 @@ config nudgePercentOf screenSize
 config resizePercentOf screenSize
 
 # Resize Bindings
-bind h:ctrl;shift;cmd  resize -10% +0
-bind l:ctrl;shift;cmd   resize +10% +0
+bind h:ctrl;shift;cmd  resize -5% +0
+bind l:ctrl;shift;cmd   resize +5% +0
 bind j:ctrl;shift;cmd     resize +0   +5%
 bind k:ctrl;shift;cmd   resize +0   -5%
 
@@ -18,10 +18,10 @@ bind up:ctrl;cmd     push up    bar-resize:screenSizeY/2
 bind down:ctrl;cmd   push down  bar-resize:screenSizeY/2
 
 # Nudge Bindings
-bind l:ctrl;shift nudge +10% +0
-bind h:ctrl;shift  nudge -10% +0
-bind k:ctrl;shift    nudge +0   -10%
-bind j:ctrl;shift  nudge +0   +10%
+bind l:ctrl;shift nudge +5% +0
+bind h:ctrl;shift  nudge -5% +0
+bind k:ctrl;shift    nudge +0   -5%
+bind j:ctrl;shift  nudge +0   +5%
 
 # Throw Bindings
 # TODO: change directions when orientation changes
