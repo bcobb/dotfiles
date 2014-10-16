@@ -1,17 +1,13 @@
 #!/bin/bash
 
-ln -Fs ~/.dotfiles/.bash_profile ~/.bash_profile
-ln -Fs ~/.dotfiles/.bashrc ~/.bashrc
 ln -Fs ~/.dotfiles/.gemrc ~/.gemrc
 ln -Fs ~/.dotfiles/.gitconfig ~/.gitconfig
 ln -Fs ~/.dotfiles/.gitignore_global ~/.gitignore_global
 ln -Fs ~/.dotfiles/.irbrc ~/.irbrc
 ln -Fs ~/.dotfiles/.profile ~/.profile
 ln -Fs ~/.dotfiles/.rdebugrc ~/.rdebugrc
-ln -Fs ~/.dotfiles/.rvm_rc ~/.rvmrc
 ln -Fs ~/.dotfiles/.tmux.conf ~/.tmux.conf
 ln -Fs ~/.dotfiles/.vimrc ~/.vimrc
-ln -Fs ~/.dotfiles/.zshrc ~/.zshrc
 ln -Fs ~/.dotfiles/.slate ~/.slate
 
 if [ ! -e ~/.vim/bundle/vundle ]; then
