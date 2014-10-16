@@ -14,8 +14,4 @@ if [ ! -e ~/.vim/bundle/vundle ]; then
   git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle && vim +BundleInstall +qall
 fi
 
-if [ ! -e ~/lib/oh-my-zsh/oh-my-zsh.sh ]; then
-  git clone git://github.com/robbyrussell/oh-my-zsh.git ~/lib/oh-my-zsh
-fi
-
 mkdir -p ~/.vim/undo
