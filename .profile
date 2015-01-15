@@ -2,6 +2,7 @@ export BREW_PREFIX=/usr/local/opt
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
 export GOPATH=$(stat -f ~/lib/go)
 export GOBIN=$GOPATH/bin
+export LC_ALL=en_US.UTF-8
 
 alias ll='ls -lph'
 
