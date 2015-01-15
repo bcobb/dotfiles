@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ln -Fs ~/.dotfiles/.gemrc ~/.gemrc
 ln -Fs ~/.dotfiles/.gitconfig ~/.gitconfig
