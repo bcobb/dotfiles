@@ -9,6 +9,10 @@ alias ll='ls -lph'
 PATH=bin:node_modules/.bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:$PATH:$HOME/bin
 export PATH
 
+LEIN_FAST_TRAMPOLINE=y
+export LEIN_FAST_TRAMPOLINE
+alias cljsbuild="lein trampoline cljsbuild $@"
+
 if [ -d $BREW_PREFIX/chruby/share/chruby ] ; then
   source $BREW_PREFIX/chruby/share/chruby/chruby.sh
   source $BREW_PREFIX/chruby/share/chruby/auto.sh
