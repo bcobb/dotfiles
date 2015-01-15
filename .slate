@@ -2,33 +2,28 @@
 # If no ~/.slate file exists this is the file that will be used.
 
 config defaultToCurrentScreen true
+config modalEscapeKey esc
 config nudgePercentOf screenSize
 config resizePercentOf screenSize
 
-# Resize Bindings
-bind h:ctrl;shift;cmd  resize -5% +0
-bind l:ctrl;shift;cmd   resize +5% +0
-bind j:ctrl;shift;cmd     resize +0   +5%
-bind k:ctrl;shift;cmd   resize +0   -5%
+alias modal-key cmd,e
 
-# Push Bindings
-bind right:ctrl;cmd  push right bar-resize:screenSizeX/3
-bind left:ctrl;cmd   push left  bar-resize:screenSizeX/3
-bind up:ctrl;cmd     push up    bar-resize:screenSizeY/2
-bind down:ctrl;cmd   push down  bar-resize:screenSizeY/2
+# Resize Bindings
+bind y:${modal-key}:toggle  resize -5% +0
+bind o:${modal-key}:toggle   resize +5% +0
+bind u:${modal-key}:toggle     resize +0   +5%
+bind i:${modal-key}:toggle   resize +0   -5%
 
 # Nudge Bindings
-bind l:ctrl;shift nudge +5% +0
-bind h:ctrl;shift  nudge -5% +0
-bind k:ctrl;shift    nudge +0   -5%
-bind j:ctrl;shift  nudge +0   +5%
+bind l:${modal-key}:toggle nudge +5% +0
+bind h:${modal-key}:toggle  nudge -5% +0
+bind k:${modal-key}:toggle    nudge +0   -5%
+bind j:${modal-key}:toggle  nudge +0   +5%
 
 # Throw Bindings
 # TODO: change directions when orientation changes
-bind up:ctrl;shift             throw 0
-bind down:ctrl;shift           throw 1
-bind up:ctrl;alt;shift         throw 0 resize
-bind down:ctrl;alt;shift       throw 1 resize
+bind up:${modal-key}             throw 0
+bind down:${modal-key}           throw 1
 
 # Window Hints
 bind esc:cmd hint
