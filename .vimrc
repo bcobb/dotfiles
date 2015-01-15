@@ -1,36 +1,65 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-
-call vundle#rc()
-
 set undodir^=~/.vim/undo
 set undofile
 set undolevels=1000
 set undoreload=10000
 
-Plugin 'gmarik/vundle'
+call plug#begin('~/.vim/plugged')
 
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-sensible'
-Plugin 'pangloss/vim-javascript'
-Plugin 'wlangstroth/vim-haskell'
-Plugin 'nono/vim-handlebars'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'guns/vim-clojure-static'
-Plugin 'tpope/vim-classpath'
-Plugin 'tpope/vim-fireplace'
-Plugin 't9md/vim-ruby-xmpfilter'
-Plugin 'Lokaltog/vim-distinguished'
-Plugin 'jnwhiteh/vim-golang'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'mustache/vim-mode'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'dockyard/vim-easydir'
-Plugin 'plasticboy/vim-markdown'
+Plug 'tpope/vim-sensible'
 
-let g:vim_markdown_folding_disabled=1
+" Templates
+Plug 'mustache/vim-mode'
+Plug 'nono/vim-handlebars'
+
+" Utility
+Plug 'junegunn/vim-easy-align'
+Plug 'dockyard/vim-easydir'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdcommenter'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'justincampbell/vim-eighties'
+Plug 'airblade/vim-gitgutter'
+
+" Languages
+Plug 'vim-ruby/vim-ruby'
+Plug 'ecomba/vim-ruby-refactoring'
+Plug 'pangloss/vim-javascript'
+Plug 'wlangstroth/vim-haskell'
+Plug 'kchmck/vim-coffee-script'
+Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
+Plug 'tpope/vim-classpath', { 'for': 'clojure' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+Plug 'wting/rust.vim'
+Plug 'fatih/vim-go'
+Plug 'markcornick/vim-bats'
+Plug 'rosstimson/bats.vim'
+
+" color scheme
+Plug 'Lokaltog/vim-distinguished'
+
+call plug#end()
+
+" Sign and number columns
+highlight SignColumn ctermbg=0
+highlight NonText ctermbg=0 ctermfg=0
+highlight Vertsplit ctermbg=233 ctermfg=233
+
+" Tabs
+highlight! link TabLineFill CursorColumn
+highlight TabLine ctermfg=7 ctermbg=234 cterm=none
+highlight TabLineSel ctermfg=166 ctermbg=234
+
+" Fancy Characters
+set listchars=tab:-\ ,
+set list
+
+" ‣
+
 set linebreak
 set number
 set scrolloff=5
@@ -39,10 +68,10 @@ set t_Co=256
 set background=dark
 colorscheme distinguished
 
-set ts=2
-set shiftwidth=2
 set expandtab
-set shiftround
+set shiftwidth=2
+set softtabstop=2
+set tabstop=4
 
 set nosmartindent
 
@@ -54,9 +83,6 @@ map <home> g<home>
 imap <home> <C-o>g<home>
 map <end> g<end>
 imap <end> <C-o>g<end>
-
-map <F4> <Plug>(xmpfilter-mark)
-map <F5> <Plug>(xmpfilter-run)
 
 set hlsearch
 
@@ -114,18 +140,37 @@ function! RunNearestTest()
     call RunTestFile(":" . spec_line_number)
 endfunction
 
-map <leader>d :!bundle exec rspec --debugger %<cr>
-map <leader>r :!bundle exec rspec --debugger -t focus %<cr>
-map <leader>f :!bundle exec rspec -t focus %<cr>
 map <leader>t :call RunTestFile()<cr>
 map <leader>T :call RunNearestTest()<cr>
-map <leader>a :call RunTests('')<cr>
-map <leader>w :w\|:!cucumber --profile wip<cr>
 
-map <leader>ls :call RunLegacySpecs()<cr>
+autocmd BufNewFile,BufRead *.bowerrc setf javascript
+autocmd BufNewFile,BufRead *.md,*.markdown set filetype=markdown
+autocmd FileType markdown set wrap
 
-let g:ftplugin_sql_omni_key       = '<M-0>'
-let g:ftplugin_sql_omni_key_right = '<Right>'
-let g:ftplugin_sql_omni_key_left  = '<Left>'
+" NERDCommenter settings
+let NERDRemoveExtraSpaces=1
+let NERDSpaceDelims=1
 
-au BufNewFile,BufRead *.bowerrc setf javascript
+map <leader># <plug>NERDCommenterToggle<CR>
+
+" rainbow_parentheses.vim
+autocmd VimEnter * RainbowParenthesesToggle
+autocmd Syntax * RainbowParenthesesLoadRound
+autocmd Syntax * RainbowParenthesesLoadSquare
+autocmd Syntax * RainbowParenthesesLoadBraces
+let g:rbpt_colorpairs = [
+      \ ['brown',       'RoyalBlue3'],
+      \ ['Darkblue',    'SeaGreen3'],
+      \ ['darkgreen',   'firebrick3'],
+      \ ['darkcyan',    'RoyalBlue3'],
+      \ ['darkred',     'SeaGreen3'],
+      \ ['darkmagenta', 'DarkOrchid3'],
+      \ ['brown',       'firebrick3'],
+      \ ['darkmagenta', 'DarkOrchid3'],
+      \ ['Darkblue',    'firebrick3'],
+      \ ['darkgreen',   'RoyalBlue3'],
+      \ ['darkcyan',    'SeaGreen3'],
+      \ ['darkred',     'DarkOrchid3'],
+      \ ['red',         'firebrick3'],
+      \ ]
+let g:rbpt_max = len(g:rbpt_colorpairs)
