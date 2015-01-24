@@ -10,7 +10,7 @@ export LC_ALL=en_US.UTF-8
 
 alias ll='ls -lph'
 
-PATH=bin:node_modules/.bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:$PATH:$HOME/bin
+PATH=bin:node_modules/.bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:$PATH:$HOME/bin:$GOBIN
 export PATH
 
 LEIN_FAST_TRAMPOLINE=y
