@@ -58,8 +58,6 @@ highlight TabLineSel ctermfg=166 ctermbg=234
 set listchars=tab:-\ ,
 set list
 
-" ‣
-
 set linebreak
 set number
 set scrolloff=5
