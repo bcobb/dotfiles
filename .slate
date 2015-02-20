@@ -25,5 +25,10 @@ bind j:${modal-key}:toggle  nudge +0   +5%
 bind up:${modal-key}             throw 0
 bind down:${modal-key}           throw 1
 
+# DoublePane replacements
+bind left:ctrl,alt corner top-left resize:screenSizeX/2;screenSizeY
+bind right:ctrl,alt corner top-right resize:screenSizeX/2;screenSizeY
+bind up:ctrl,alt corner top-right resize:screenSizeX;screenSizeY
+
 # Window Hints
 bind esc:cmd hint
