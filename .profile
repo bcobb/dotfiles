@@ -24,8 +24,11 @@ if [ -d $BREW_PREFIX/chruby/share/chruby ] ; then
   [ -f .ruby-version ] || chruby 2.1
 fi
 
-if [ -d $BREW_PREFIX/git ] ; then
-  source $BREW_PREFIX/git/etc/bash_completion.d/git-completion.bash
+if [ -d $BREW_PREFIX/../etc/bash_completion.d/ ] ; then
+  source $BREW_PREFIX/../etc/bash_completion.d/git-completion.bash
+  source $BREW_PREFIX/../etc/bash_completion.d/ag.bashcomp.sh
+  source $BREW_PREFIX/../etc/bash_completion.d/npm
+  source $BREW_PREFIX/../etc/bash_completion.d/tmux
 fi
 
 USER_COLOR='\e[38;05;85m'
