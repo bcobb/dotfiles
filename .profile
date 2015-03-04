@@ -25,6 +25,10 @@ if [ -d $BREW_PREFIX/chruby/share/chruby ] ; then
 fi
 
 if [ -d $BREW_PREFIX/../etc/bash_completion.d/ ] ; then
+ if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    source $(brew --prefix)/etc/bash_completion
+  fi
+
   source $BREW_PREFIX/../etc/bash_completion.d/git-completion.bash
   source $BREW_PREFIX/../etc/bash_completion.d/ag.bashcomp.sh
   source $BREW_PREFIX/../etc/bash_completion.d/npm
