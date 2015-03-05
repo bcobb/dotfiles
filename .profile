@@ -1,3 +1,4 @@
+export LESS="-R"
 export BREW_PREFIX=/usr/local/opt
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
