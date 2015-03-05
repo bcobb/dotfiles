@@ -13,6 +13,7 @@ Plug 'tpope/vim-sensible'
 " Templates
 Plug 'mustache/vim-mode'
 Plug 'nono/vim-handlebars'
+Plug 'mxw/vim-jsx'
 
 " Utility
 Plug 'junegunn/vim-easy-align'
