@@ -34,5 +34,8 @@ bind up:ctrl,alt corner top-right resize:screenSizeX;screenSizeY
 bind n:${modal-key}:toggle resize +0 +100%
 bind m:${modal-key}:toggle resize +0 -50%
 
+# Centering
+bind b:${modal-key}:toggle move screenOriginX+screenSizeX/4;screenOriginY screenSizeX/2;screenSizeY
+
 # Window Hints
 bind esc:cmd hint
