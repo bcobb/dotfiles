@@ -159,8 +159,8 @@ endfunction
 
 " Find all files in all non-dot directories starting in the working directory.
 " Fuzzy select one of those. Open the selected file with :e.
-nnoremap <leader>f :call SelectaCommand("find * -type f", "", ":e")<cr>
-nnoremap <leader>g :call SelectaCommand("find * -type f", "", ":tabe")<cr>
+nnoremap <leader>f :call SelectaCommand("find * -type f -and -not -path \"tmp/**/*\"", "", ":e")<cr>
+nnoremap <leader>g :call SelectaCommand("find * -type f -and -not -path \"tmp/**/*\"", "", ":tabe")<cr>
 
 autocmd BufNewFile,BufRead *.bowerrc setf javascript
 autocmd BufNewFile,BufRead *.md,*.markdown set filetype=markdown
