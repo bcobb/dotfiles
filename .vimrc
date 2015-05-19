@@ -96,54 +96,11 @@ let mapleader=","
 
 set shell=/bin/sh
 
-" Test runners inspired by @garybernhardt
-function! RunTests(filename)
-    :w
-    :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
-    if match(a:filename, '\.feature$') != -1
-        exec ":!cucumber " . a:filename
-    else
-        if filereadable("script/test")
-            exec ":!RAILS_ENV=test script/test " . a:filename
-        elseif filereadable("spec/spec.opts") " legacy cruft
-            exec ":!RAILS_ENV=test spec " . a:filename
-        elseif filereadable("Gemfile")
-            exec ":!RAILS_ENV=test bundle exec rspec " . a:filename
-        else
-            exec ":!RAILS_ENV=test rspec " . a:filename
-        end
-    end
-endfunction
-
-function! SetTestFile()
-    " Set the spec file that tests will be run for.
-    let t:grb_test_file=@%
-endfunction
-
-function! RunTestFile(...)
-    if a:0
-        let command_suffix = a:1
-    else
-        let command_suffix = ""
-    endif
-
-    " Run the tests for the previously-marked file.
-    let in_test_file = match(expand("%"), '\(.feature\|_spec.rb\)$') != -1
-    if in_test_file
-        call SetTestFile()
-    elseif !exists("t:grb_test_file")
-        return
-    end
-    call RunTests(t:grb_test_file . command_suffix)
-endfunction
-
-function! RunNearestTest()
-    let spec_line_number = line('.')
-    call RunTestFile(":" . spec_line_number)
-endfunction
-
-map <leader>t :call RunTestFile()<cr>
-map <leader>T :call RunNearestTest()<cr>
+let g:rspec_command = "!bundle exec rspec {spec}"
+map <leader>t :call RunCurrentSpecFile()<CR>
+map <leader>s :call RunNearestSpec()<CR>
+map <leader>l :call RunLastSpec()<CR>
+map <leader>a :call RunAllSpecs()<CR>
 
 " Run a given vim command on the results of fuzzy selecting from a given shell
 " command. See usage below.
