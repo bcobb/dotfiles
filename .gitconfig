@@ -6,6 +6,7 @@
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = vim
+	whitespace = blank-at-eol,space-before-tab,blank-at-eof
 [apply]
   whitespace = fix
 
