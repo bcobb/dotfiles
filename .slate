@@ -20,11 +20,6 @@ bind h:${modal-key}:toggle  nudge -5% +0
 bind k:${modal-key}:toggle    nudge +0   -5%
 bind j:${modal-key}:toggle  nudge +0   +5%
 
-# Throw Bindings
-# TODO: change directions when orientation changes
-bind up:${modal-key}             throw 0
-bind down:${modal-key}           throw 1
-
 # DoublePane replacements
 bind left:ctrl,alt corner top-left resize:screenSizeX/2;screenSizeY
 bind right:ctrl,alt corner top-right resize:screenSizeX/2;screenSizeY
@@ -39,3 +34,7 @@ bind b:${modal-key}:toggle move screenOriginX+screenSizeX/4;screenOriginY screen
 
 # Window Hints
 bind esc:cmd hint
+
+# Throw bindings
+bind 0:${modal-key}:toggle sequence throw 0 | move screenOriginX+screenSizeX/4;screenOriginY screenSizeX/2;screenSizeY
+bind 1:${modal-key}:toggle sequence throw 1 | corner top-right resize:screenSizeX;screenSizeY
