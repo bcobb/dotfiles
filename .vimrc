@@ -25,9 +25,11 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'justincampbell/vim-eighties'
 Plug 'airblade/vim-gitgutter'
+Plug 'rking/ag.vim'
 
 " Languages
 Plug 'vim-ruby/vim-ruby'
+Plug 'thoughtbot/vim-rspec'
 Plug 'ecomba/vim-ruby-refactoring'
 Plug 'pangloss/vim-javascript'
 Plug 'wlangstroth/vim-haskell'
@@ -39,6 +41,7 @@ Plug 'wting/rust.vim'
 Plug 'fatih/vim-go'
 Plug 'markcornick/vim-bats'
 Plug 'rosstimson/bats.vim'
+Plug 'tpope/vim-rails'
 
 " color scheme
 Plug 'Lokaltog/vim-distinguished'
