@@ -121,6 +121,7 @@ endfunction
 " Fuzzy select one of those. Open the selected file with :e.
 nnoremap <leader>f :call SelectaCommand("find * -type f -and -not -path \"tmp/**/*\"", "", ":e")<cr>
 nnoremap <leader>g :call SelectaCommand("find * -type f -and -not -path \"tmp/**/*\"", "", ":tabe")<cr>
+nnoremap <leader>u :call SelectaCommand("ag -l " . expand("<cword>"), "", ":tabe")<cr>
 
 autocmd BufNewFile,BufRead *.bowerrc setf javascript
 autocmd BufNewFile,BufRead *.md,*.markdown set filetype=markdown
