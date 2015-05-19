@@ -39,3 +39,5 @@
 	default = nothing
 [log]
 	date = iso
+[pretty]
+	changelog = format:* %H %s
