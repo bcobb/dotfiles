@@ -37,3 +37,5 @@
 	unignore = update-index --no-assume-unchanged --
 [push]
 	default = nothing
+[log]
+	date = iso
