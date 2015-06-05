@@ -1,5 +1,5 @@
 export LESS="-R"
-export EDITOR=vim
+export EDITOR=emacsclient
 export BREW_PREFIX=/usr/local/opt
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
@@ -11,6 +11,7 @@ fi
 export LC_ALL=en_US.UTF-8
 
 alias ll='ls -lph'
+alias vim='emacsclient'
 
 PATH=bin:node_modules/.bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:$PATH:$HOME/bin:$GOBIN
 export PATH
