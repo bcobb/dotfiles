@@ -46,3 +46,4 @@ Thumbs.db
 .lein-repl-history
 
 .ruby-version
+.powrc
