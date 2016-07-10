@@ -35,6 +35,7 @@ if [ -d $BREW_PREFIX/../etc/bash_completion.d/ ] ; then
   source $BREW_PREFIX/../etc/bash_completion.d/ag.bashcomp.sh
   source $BREW_PREFIX/../etc/bash_completion.d/npm
   source $BREW_PREFIX/../etc/bash_completion.d/tmux
+  source $BREW_PREFIX/../etc/bash_completion.d/lein-completion.bash
 fi
 
 USER_COLOR='\e[38;05;85m'
