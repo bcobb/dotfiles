@@ -1,18 +1,30 @@
 #!/usr/bin/env bash
 
-ln -Fs ~/.dotfiles/.gemrc ~/.gemrc
-ln -Fs ~/.dotfiles/.gitconfig ~/.gitconfig
-ln -Fs ~/.dotfiles/.gitignore_global ~/.gitignore_global
-ln -Fs ~/.dotfiles/.irbrc ~/.irbrc
-ln -Fs ~/.dotfiles/.profile ~/.profile
-ln -Fs ~/.dotfiles/.rdebugrc ~/.rdebugrc
-ln -Fs ~/.dotfiles/.tmux.conf ~/.tmux.conf
-ln -Fs ~/.dotfiles/.vimrc ~/.vimrc
-ln -Fs ~/.dotfiles/.slate ~/.slate
+mkdir -p ~/.lein
 
-if [ ! -e ~/.vim/autoload ]; then
-  mkdir -p ~/.vim/autoload
-  curl -fLo ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+dotfilesp=~/.dotfiles
+vimconfig=~/.vim
+emacsconfig=~/.emacs.d
+
+ln -Fs $dotfilesp/.lein/profiles.clj ~/.lein/profiles.clj
+
+ln -Fs $dotfilesp/.gemrc ~/.gemrc
+ln -Fs $dotfilesp/.gitconfig ~/.gitconfig
+ln -Fs $dotfilesp/.gitignore_global ~/.gitignore_global
+ln -Fs $dotfilesp/.irbrc ~/.irbrc
+ln -Fs $dotfilesp/.profile ~/.profile
+ln -Fs $dotfilesp/.rdebugrc ~/.rdebugrc
+ln -Fs $dotfilesp/.tmux.conf ~/.tmux.conf
+ln -Fs $dotfilesp/.vimrc ~/.vimrc
+ln -Fs $dotfilesp/.slate ~/.slate
+
+if [ ! -e $vimconfig/autoload ]; then
+  mkdir -p $vimconfig/autoload
+  curl -fLo $vimconfig/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
-mkdir -p ~/.vim/undo
+mkdir -p $vimconfig/undo
+
+if [ ! -e $emacsconfig/init.el ]; then
+  git clone git@github.com:bcobb/ohai-emacs ~/.emacs.d
+fi
