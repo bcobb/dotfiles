@@ -6,7 +6,7 @@ config modalEscapeKey esc
 config nudgePercentOf screenSize
 config resizePercentOf screenSize
 
-alias modal-key cmd,e
+alias modal-key cmd,ctrl,f
 
 # Resize Bindings
 bind y:${modal-key}:toggle  resize -5% +0
