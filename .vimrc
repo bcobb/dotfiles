@@ -9,31 +9,13 @@ set undoreload=10000
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-sensible'
+Plug 'sheerun/vim-polyglot'
 
-" Utility
-Plug 'junegunn/vim-easy-align'
 Plug 'dockyard/vim-easydir'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'scrooloose/nerdcommenter'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'justincampbell/vim-eighties'
-Plug 'airblade/vim-gitgutter'
 
-" Languages
-Plug 'vim-ruby/vim-ruby'
-Plug 'thoughtbot/vim-rspec'
-Plug 'pangloss/vim-javascript'
-Plug 'kchmck/vim-coffee-script'
-Plug 'guns/vim-clojure-static', { 'for': 'clojure' }
-Plug 'tpope/vim-classpath', { 'for': 'clojure' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'fatih/vim-go'
-Plug 'markcornick/vim-bats'
-Plug 'rosstimson/bats.vim'
-Plug 'tpope/vim-rails'
-
-" color scheme
-Plug 'Numkil/vim-distinguished'
+Plug 'Lokaltog/vim-distinguished'
 
 call plug#end()
 
@@ -85,13 +67,9 @@ let mapleader=","
 
 set shell=/bin/sh
 
-let g:rspec_command = "!bundle exec rspec {spec}"
-map <leader>t :call RunCurrentSpecFile()<CR>
-map <leader>s :call RunNearestSpec()<CR>
-map <leader>l :call RunLastSpec()<CR>
-map <leader>a :call RunAllSpecs()<CR>
+autocmd BufNewFile,BufReadPost * let b:clean_on_open = search('\s\+$', 'nw') == 0
+autocmd BufWritePre * if get(b:, 'clean_on_open', 0) | %s/\s\+$//e | endif
 
-autocmd BufNewFile,BufRead *.bowerrc setf javascript
 autocmd BufNewFile,BufRead *.md,*.markdown set filetype=markdown
 autocmd FileType markdown set wrap
 
