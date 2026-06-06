@@ -1,0 +1,9 @@
+alias ls='ls -G'
+alias ll="ls -lAh"
+alias la='ls -A'
+alias find='noglob find'
+alias mv='mv -v'
+alias cp='cp -v'
+alias mkdir='mkdir -pv'
+alias grep='grep --color=auto'
+alias whichport='lsof -i'

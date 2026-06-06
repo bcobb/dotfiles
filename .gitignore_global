@@ -80,3 +80,9 @@ tramp
 
 # cask packages
 .cask/
+
+# vs code whatever
+.clj-kondo
+.lsp
+
+**/.claude/settings.local.json

@@ -36,7 +36,13 @@
 	ignore = update-index --assume-unchanged --
 	unignore = update-index --no-assume-unchanged --
 [push]
-	default = nothing
+	default = current
+[pull]
+	rebase = true
+[fetch]
+	prune = true
+[init]
+	defaultBranch = main
 [log]
 	date = iso
 [pretty]

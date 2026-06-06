@@ -1,22 +1,23 @@
 #!/usr/bin/env bash
 
-mkdir -p ~/.lein
-
 dotfilesp=~/.dotfiles
 vimconfig=~/.vim
-emacsconfig=~/.emacs.d
-
-ln -Fs $dotfilesp/.lein/profiles.clj ~/.lein/profiles.clj
 
 ln -Fs $dotfilesp/.gemrc ~/.gemrc
 ln -Fs $dotfilesp/.gitconfig ~/.gitconfig
 ln -Fs $dotfilesp/.gitignore_global ~/.gitignore_global
 ln -Fs $dotfilesp/.irbrc ~/.irbrc
-ln -Fs $dotfilesp/.profile ~/.profile
 ln -Fs $dotfilesp/.rdebugrc ~/.rdebugrc
 ln -Fs $dotfilesp/.tmux.conf ~/.tmux.conf
 ln -Fs $dotfilesp/.vimrc ~/.vimrc
-ln -Fs $dotfilesp/.slate ~/.slate
+ln -Fs $dotfilesp/.zshenv ~/.zshenv
+ln -Fs $dotfilesp/.zshrc ~/.zshrc
+
+mkdir -p ~/.config/zsh
+ln -Fs $dotfilesp/config/zsh/aliases.zsh ~/.config/zsh/aliases.zsh
+ln -Fs $dotfilesp/config/zsh/functions.zsh ~/.config/zsh/functions.zsh
+ln -Fs $dotfilesp/config/zsh/options.zsh ~/.config/zsh/options.zsh
+ln -Fs $dotfilesp/config/zsh/prompt.zsh ~/.config/zsh/prompt.zsh
 
 if [ ! -e $vimconfig/autoload ]; then
   mkdir -p $vimconfig/autoload
@@ -24,7 +25,3 @@ if [ ! -e $vimconfig/autoload ]; then
 fi
 
 mkdir -p $vimconfig/undo
-
-if [ ! -e $emacsconfig/init.el ]; then
-  git clone git@github.com:bcobb/ohai-emacs ~/.emacs.d
-fi
